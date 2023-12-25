@@ -12,10 +12,11 @@ pipeline {
             agent {
                 dockerfile {
                     filename 'dockerfile'
+                    additionalBuildArgs '-p 8081:80'
                 }
             }
             steps{
-                sh 'touch file1'
+                echo "the container is created"
             }
         }
     }
