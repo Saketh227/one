@@ -9,7 +9,11 @@ pipeline {
         }
         
         stage("build container") {
-            agent {dockerfile true}
+            agent {
+                docker {
+                    image nginx
+                }
+            }
             steps{
                 echo "the container is created"
             }
