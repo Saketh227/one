@@ -9,12 +9,7 @@ pipeline {
         }
         
         stage("build container") {
-            agent {
-                dockerfile {
-                    filename 'dockerfile'
-                    additionalBuildArgs '-p 8081:80'
-                }
-            }
+            agent {dockerfile true}
             steps{
                 echo "the container is created"
             }
